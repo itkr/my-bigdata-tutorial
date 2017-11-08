@@ -1,0 +1,16 @@
+in:
+    # MongoDBから指定した日付のレコードを抽出
+    type: mongodb
+    uri: mongodb://localhost:27017/twitter
+    collection: sample
+    query: '{ "_timestamp": { $gte: "2000-01-01", $lt: "2100-01-01" }}'
+    projection: '{ "timestamp_ms": 1, "lang": 1, "text": 1 }'
+out:
+    # JSONファイルとして出力
+    type: file
+    path_prefix: /tmp/twitter_sample_2000-01-01/
+    file_ext: json.gz
+    formatter:
+        type: jsonl
+    encoders:
+    - type: gzip

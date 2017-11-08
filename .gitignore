@@ -1,0 +1,5 @@
+*.dat
+spark/derby.log
+spark/metastore_db
+spark/csv_output
+spark/spark-warehouse
