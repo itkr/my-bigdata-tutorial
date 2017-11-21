@@ -1,5 +1,8 @@
 *.dat
-spark/derby.log
-spark/metastore_db
-spark/csv_output
-spark/spark-warehouse
+*/derby.log
+*/metastore_db
+*/csv_output
+*/spark-warehouse
+derby.log
+metastore_db
+twitter_env.sh

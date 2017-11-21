@@ -18,7 +18,7 @@ from pyspark.sql import Row
 def text_split(row):
     for word in row.text.split():
         yield Row(time=row.time,word=word)
-        
+
 en_tweets.rdd.take(1)
 en_tweets=spark.sql(query)
 query
@@ -31,7 +31,7 @@ en_tweets
 en_tweets.rdd.take(1)
 en_tweets.rdd.flatMap(text_split).take(2)
 text_split
-en_tweets.rdd.flatMap(text_split)toDF().show(2)
+en_tweets.rdd.flatMap(text_split).toDF().show(2)
 en_tweets.rdd.flatMap(text_split).toDF().show(2)
 get_ipython().magic(u'save ')
 get_ipython().magic(u'save ()')
